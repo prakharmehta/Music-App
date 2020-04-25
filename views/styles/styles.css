@@ -7,7 +7,7 @@ body {
 
 ul{
     list-style-type: none;
-    padding-left: 150px;
+    /* padding-left: 150px;s */
     overflow: hidden;
     flex: 1;
     display: flex;
@@ -16,27 +16,22 @@ ul{
 
 li a{
     margin-top: 20px;
-    margin-left: 84px;
+    margin-bottom: 20px;
     color: white;
     font-family: 'montserrat';
     font-size: 15px;
     font-weight: lighter;
     flex-direction: row;
     text-decoration: none;
+    display: inline-block;
 }
 
-.brand span{
-    font-family: 'Anurati';
-    font-size: 37.5px;
-    color: white;
+li{
+    width: 100px;
+    text-align: center;
 }
 
-.brand{
-    flex: 2;
-    margin-left: 12.5px;
-    margin-top: 2.5px;
 
-}
 
 .header{
     display: flex;
@@ -76,36 +71,6 @@ input:focus{
     outline: none;
 }
 
-button{
-    margin-top: 2.5%;
-	background: linear-gradient(-45deg, #7526BE, #e73c7e, #FF00E6);
-	background-size: 400% 400%;
-    animation: gradient 5s ease infinite;
-    padding: 10px 17.5px 10px 17.5px;
-    border-radius: 100px;
-    border-style: none;
-    font-family: 'Montserrat', 'sans-serif';
-    color: white;
-    cursor: pointer;
-    
-}
-
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
-button:focus{
-    outline: none;
-}
 ::placeholder{
     font-family: 'Montserrat', 'sans-serif';
     font-size: medium;
