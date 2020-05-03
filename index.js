@@ -3,6 +3,7 @@ const neo = require('./controllers/neo.js')
 const apod = require('./controllers/apod')
 
 const app = express();
+const port = process.env.PORT || 3000
 
 app.set('view engine', 'ejs');
 
@@ -76,6 +77,6 @@ app.get('/neo', (req, res) => {
     })
 })
 
-console.log('Server is up');
-
-app.listen(3000);
+app.listen(port, (port) => {
+    console.log(`Server is up and running on ${port}`);
+});
