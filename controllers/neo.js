@@ -7,9 +7,16 @@ const neo = (startDate, callback) => {
         if (error){
             callback('Unable to connect to NeoW services', undefined);    
         } else {
+            asteroids = []
+            body.near_earth_objects[startDate].forEach(element => {
+                neo_name = element.name
+                hazardous = element.is_potentially_hazardous_asteroid
+                asteroids.push({neo_name, hazardous})          
+            }) 
+
             info = {
-                list: body.near_earth_objects[0],
-                count: body.element_count,
+                list: asteroids,
+                count: body.near_earth_objects[startDate].length,
             }
             callback(undefined, info)
         }

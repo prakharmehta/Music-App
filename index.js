@@ -1,5 +1,6 @@
 const express = require('express');
 const neo = require('./controllers/neo.js')
+const apod = require('./controllers/apod')
 
 const app = express();
 
@@ -7,17 +8,42 @@ app.set('view engine', 'ejs');
 
 app.use(express.static('./views'))
 
-app.get('/', (req, res) => {
+app.get('', (req, res) => {
     res.render('space', {
         title: 'Space'
     })
 })
 
 app.get('/apod', (req, res) => {
-    res.render('apod',{
-        title: 'APOD'
-    })
+    if(!req.query.date)
+    {
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+
+        apod(date, (err, data) => {
+            if(err) {
+                return res.send(err)
+            }
+            res.send({
+                data
+            })
+        })
+    }
+    else
+    {
+        apod(req.query.date, (err, data) => {
+            if(err) {
+                return res.send(err)
+            }
+            res.send({
+                data
+            })
+            
+        })
+    }
 })
+
+    
 
 app.get('/about', (req, res) => {
     res.render('about',{
@@ -39,12 +65,9 @@ app.get('/neo', (req, res) => {
             return res.send(err)
         }
         res.send({
-            data,
-            date: res.query.startDate
+            data
         })
     })
-
-
 })
 
 console.log('Server is up');

@@ -1,25 +1,12 @@
-const form = document.querySelector("form")
-const search = document.querySelector("input")
-const msgOne = document.querySelector('#msg-1')
-const msgTwo = document.querySelector('#msg-2')
+console.log('Client side js');
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault()
-
-    const date = search.value
-    fetch(`/neo?startDate=${date}`).then((response) => {
-        response.json().then((data) => {
-            if(data.err)
-        {   
-            msgOne.textContent = `${data.err}`
+fetch('http://localhost:3000/apod?date=2020-05-03').then((response) => {
+    response.json().then((data) => {
+        if(data.error) {
+            console.log(data.error);
+        } else {
+            console.log(data.data);
+               
         }
-        else 
-        {   
-             msgOne.textContent = `${data.data}`
-             msgTwo.textContent = `${data.date}`
-        }
-        })
     })
-
-
 })
