@@ -53,6 +53,15 @@ li{
     margin-top: 5%;
 }
 
+.quote{
+    margin-top: 5%;
+    flex: 1;
+    text-align: center;
+    color: white;
+    font-size: large;
+    font-family: monospace;
+}
+
 .search{
     margin-top: 5%;
     flex: 1;
@@ -76,4 +85,12 @@ input:focus{
     font-size: medium;
     vertical-align: center;
     padding-left: 5px;
+}
+
+p{
+    color: white;
+}
+
+img{
+    width: 250px;
 }

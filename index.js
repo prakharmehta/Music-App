@@ -15,6 +15,12 @@ app.get('', (req, res) => {
 })
 
 app.get('/apod', (req, res) => {
+    res.render('apod', {
+        title: 'APOD',
+    })
+})
+
+app.get('/apod/picture', (req, res) => {
     if(!req.query.date)
     {
         var today = new Date();

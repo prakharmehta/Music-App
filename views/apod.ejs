@@ -12,11 +12,22 @@
 </head>
 <body>
     <%- include('partials/header')%>
-    <div class="container">
+    <div id="container" class="container">
         <div class="title">
             <span><%=title%></span>
         </div>
+        <div class="search">
+            <form id="form1" action="">
+                <input id="input1" type="date" placeholder="Date">
+                <br>
+                <button>Search</button>
+            </form>
+        </div>
+        <p id="msg1"></p>
+        <p id="msg2"></p>  
+        <!-- <img id="apod" src="" alt=""> -->
     </div>
     <%- include('partials/footer')%>
+    <script src="./scripts/app.js"></script>
 </body>
 </html>
