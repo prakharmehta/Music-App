@@ -77,6 +77,6 @@ app.get('/neo', (req, res) => {
     })
 })
 
-app.listen(port, (port) => {
+app.listen(port, () => {
     console.log(`Server is up and running on ${port}`);
 });
