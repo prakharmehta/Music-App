@@ -19,7 +19,8 @@ const form = document.getElementById('form1')
                         if(data.error) {
                             msgOne.textContent = data.error;
                         } else {
-                            msgOne.textContent = data.data.date;
+                            msgOne.textContent = `DATE: ${data.data.date}`;
+                            msgTwo.textContent = `TITLE: ${data.data.title}`;
                             if(!pic)
                             {
                             var pic = document.createElement("img");
