@@ -1,11 +1,11 @@
 li a:hover{
     text-decoration: none;
-    color: white;
+    /* color: white; */
 }
 
-form button{
+form #submit{
     margin-top: 2.5%;
-	background: linear-gradient(-45deg, #7526BE, #e73c7e, #FF00E6);
+	background: linear-gradient(-45deg, #82b1ff, #4527a0, #1a237e, #82b1ff);
 	background-size: 400% 400%;
     animation: gradient 5s ease infinite;
     padding: 10px 17.5px 10px 17.5px;
@@ -52,3 +52,26 @@ body {
     font-family: 'Montserrat', 'sans-serif';
   }
 
+  .datepicker-date-display{
+      background-color: #1a237e;
+  }
+
+  .datepicker-cancel{
+      color: #1a237e;
+  }
+
+  .datepicker-done{
+    color: #1a237e;
+}
+
+/* .datepicker-day-button{
+    background-color: #1a237e;
+} */
+.datepicker-table td.is-selected
+{
+    background-color: #1a237e;
+}
+
+.datepicker-table td.is-today {
+    color: #1a237e;
+}

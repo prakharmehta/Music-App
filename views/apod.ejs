@@ -3,18 +3,39 @@
         </div>
         <div class="search">
             <form id="form1" action="">
-                <input id="input1" type="date" placeholder="Date">
+                <input id="input1" type="text" class="datepicker" placeholder="Date">
                 <br>
-                <button>Search</button>
+                <button id="submit">Search</button>
             </form>
         </div>
         <div class="img-output">
             <div class="img-container" id="img-container-1">
-
+                <p id="apodLiteral"></p>
             </div>
             <div class="img-info">
+                <p id="date"></p>
+                <p id="title"></p>
+                <p id="copyright"></p>
+                <p id="explanation"></p>
                 <p id="msg1"></p>
-                <p id="msg2"></p>
             </div> 
         </div>
+        <script>
+            function today()
+            {
+                var today = new Date();
+                var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+                return date    
+            }
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.datepicker');
+    var instances = M.Datepicker.init(elems, {
+        showClearBtn: true,
+        format: 'yyyy-mm-dd',
+        maxDate: new Date(today()),
+        autoClose: true
+        
+    });
+  });
+        </script>
          
