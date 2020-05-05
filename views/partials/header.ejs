@@ -1,17 +1,33 @@
-<div class="header navbar-expand">
-    <div class="navbar-brand">
-        <span>SPACE</span>
-    </div>
+<div class="navbar-fixed">
+    <nav class="indigo darken-4">
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo">SPACE</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/">HOME</a></li>
+            <li><a href="#apod">APOD</a></li>
+            <li><a href="#neo">NEO</a></li>
+            <li><a href="#about">ABOUT</a></li>
+          </ul>
+        </div>
+      </nav>
     
-    <ul class="nav">
-        <li class="nav-item">
-            <a href="/">HOME</a>
-        </li>
-        <li class="nav-item">
-            <a href="/apod">APOD</a>
-        </li>
-        <li class="nav-item">
-            <a href="/about">ABOUT</a>
-        </li>
-    </ul>
+      <ul class="sidenav white" id="mobile-demo">
+        <li><a href="/">HOME</a></li>
+        <li><a href="#apod">APOD</a></li>
+        <li><a href="#neo">NEO</a></li>
+        <li><a href="#about">ABOUT</a></li>
+      </ul>
 </div>
+
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, {
+        edge: "left",
+        draggable: true        
+    });
+  });
+  
+  </script>

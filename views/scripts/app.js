@@ -2,8 +2,7 @@ const form = document.getElementById('form1')
         const search = document.getElementById('input1')
         const msgOne = document.getElementById('msg1')
         const msgTwo = document.getElementById('msg2')
-        // const pic = document.getElementById('apod')
-        const div = document.getElementById('container')
+        const div = document.getElementById('img-container-1')
         if(form)
         {   
             form.addEventListener('submit', (e) => {

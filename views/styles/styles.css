@@ -1,29 +1,8 @@
 body {
-    background: url(../images/79376.jpg);
-    background-size: cover;
+    background: url(../images/earth.jpg);
+    background-size: 115% 115%;
     background-position: center;
     background-attachment: fixed;
-}
-
-ul{
-    list-style-type: none;
-    /* padding-left: 150px;s */
-    overflow: hidden;
-    flex: 1;
-    display: flex;
-
-}
-
-li a{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: white;
-    font-family: 'montserrat';
-    font-size: 15px;
-    font-weight: lighter;
-    flex-direction: row;
-    text-decoration: none;
-    display: inline-block;
 }
 
 li{
@@ -31,26 +10,30 @@ li{
     text-align: center;
 }
 
-
-
 .header{
     display: flex;
     flex-direction: row;
 }
 
-.container{
+.intro{
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    justify-content: center;
 }
 
-.title{
+.intro .container{
+    margin-bottom: 20%;;
+}
+
+.title-white{
     font-size: 150;
     font-family: 'Montserrat', 'sans-serif';
     font-weight: 600;
     color: white;
     text-align: center;
     flex: 1;
-    margin-top: 5%;
+    /* margin-bottom: 30%; */
 }
 
 .quote{
@@ -58,7 +41,7 @@ li{
     flex: 1;
     text-align: center;
     color: white;
-    font-size: large;
+    font-size: larger;
     font-family: monospace;
 }
 
@@ -87,11 +70,44 @@ input:focus{
     padding-left: 5px;
 }
 
-p{
-    color: white;
+.apod img{
+    width: 50%;
+    height: auto;
 }
 
-img{
-    width: 50%;
-    height: 250px;
+.title-black{
+    font-size: 150;
+    font-family: 'Montserrat', 'sans-serif';
+    font-weight: 600;
+    text-align: center;
+    flex: 1;
+    margin-top: 5%;
 }
+
+.apod{
+    background-color: white;
+    color: black;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.apod input{
+    border: 1px solid black thin;
+}
+
+.img-output{
+    display: flex;
+    flex-direction: row;
+}
+
+.img-container{
+    flex: 1;
+}
+
+.img-info{
+    flex:1;
+    color: black;
+}
+
+

@@ -1,23 +1,6 @@
-.nav-item:hover{
-
-    color: white;
-    font-weight: bolder;
-    
-    
-}
-
 li a:hover{
     text-decoration: none;
     color: white;
-}
-
-body{
-    margin: 0px;
-}
-
-.navbar{
-    padding:0px;
-    z-index: 2000;
 }
 
 form button{
@@ -51,16 +34,21 @@ button:focus{
     outline: none;
 }
 
-.navbar-brand span{
-    font-family: 'Anurati';
-    font-size: 37.5px;
-    color: white;
-}
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
 
-.navbar-brand{
-    flex: 3;
-    margin-left: 12.5px;
-    margin-top: 2.5px;
+  main {
+    flex: 1 0 auto;
+  }
 
-}
+  .brand-logo{
+      font-family: 'Anurati';
+  }
+
+  ul{
+    font-family: 'Montserrat', 'sans-serif';
+  }
 
