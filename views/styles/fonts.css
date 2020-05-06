@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'Anurati';
+    font-style: normal;
+    font-display: swap;
+    src: local('Anurati'), url(/views/fonts/Anurati-Regular.otf)
+}
