@@ -11,7 +11,7 @@ form #submit{
     padding: 10px 17.5px 10px 17.5px;
     border-radius: 100px;
     border-style: none;
-    font-family: 'Montserrat', 'sans-serif';
+    font-family: 'Montserrat', sans-serif;
     color: white;
     cursor: pointer;
     
@@ -49,7 +49,7 @@ body {
   }
 
   ul{
-    font-family: 'Montserrat', 'sans-serif';
+    font-family: 'Montserrat', sans-serif;
   }
 
   .datepicker-date-display{
@@ -83,7 +83,7 @@ body {
 
     .title-white{
         font-size: 5rem;
-        font-family: 'Montserrat', 'sans-serif';
+        font-family: 'Montserrat', sans-serif;
         font-weight: 600;
         color: white;
         text-align: center;
@@ -94,7 +94,7 @@ body {
 
     .title-black{
         font-size: 5rem;
-        font-family: 'Montserrat', 'sans-serif';
+        font-family: 'Montserrat', sans-serif;
         font-weight: 600;
         text-align: center;
         flex: 1;
@@ -131,7 +131,7 @@ body {
 @media (min-width: 576px) { 
     .title-white{
         font-size: 8rem;
-        font-family: 'Montserrat', 'sans-serif';
+        font-family: 'Montserrat', sans-serif;
         font-weight: 600;
         color: white;
         text-align: center;
@@ -165,7 +165,7 @@ body {
 
     .title-white{
         font-size: 10rem;
-        font-family: 'Montserrat', 'sans-serif';
+        font-family: 'Montserrat', sans-serif;
         font-weight: 600;
         color: white;
         text-align: center;
@@ -201,7 +201,7 @@ body {
 
     .title-white{
         font-size: 10rem;
-        font-family: 'Montserrat', 'sans-serif';
+        font-family: 'Montserrat', sans-serif;
         font-weight: 600;
         color: white;
         text-align: center;
@@ -257,7 +257,7 @@ body {
     
     .title-white{
         font-size: 100 rem;
-        font-family: 'Montserrat', 'sans-serif';
+        font-family: 'Montserrat', sans-serif;
         font-weight: 600;
         color: white;
         text-align: center;
@@ -294,7 +294,7 @@ body {
     }
     
     ::placeholder{
-        font-family: 'Montserrat', 'sans-serif';
+        font-family: 'Montserrat', sans-serif;
         font-size: medium;
         vertical-align: center;
         padding-left: 5px;
@@ -308,7 +308,7 @@ body {
     
     .title-black{
         font-size: 8rem;
-        font-family: 'Montserrat', 'sans-serif';
+        font-family: 'Montserrat', sans-serif;
         font-weight: 600;
         text-align: center;
         flex: 1;
