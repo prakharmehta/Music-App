@@ -38,8 +38,8 @@ const form = document.getElementById('form1')
                             {
                             var pic = document.createElement("img");
                             pic.setAttribute("src", data.data.src);
+                            pic.setAttribute("class", "materialboxed");
                             div.appendChild(pic);
-                            console.log(pic);
                             form.addEventListener('submit', () => {
                                 div.removeChild(pic);
                                 dateOutput.textContent=''

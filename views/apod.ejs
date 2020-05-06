@@ -12,8 +12,9 @@
             <div class="img-container" id="img-container-1">
                 <p id="apodLiteral"></p>
             </div>
+            <p id="msg1"></p>
             <div class="img-info">
-                <p id="msg1"></p>
+                
                 <p id="date"></p>
                 <p id="title"></p>
                 <p id="copyright"></p>
@@ -35,6 +36,13 @@
         maxDate: new Date(today()),
         autoClose: true
         
+    });
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.materialboxed');
+    var instances = M.Materialbox.init(elems, {
+        inDuration: 275,
+        outDuration: 200
     });
   });
         </script>
