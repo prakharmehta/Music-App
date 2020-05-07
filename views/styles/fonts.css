@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'anuratiregular';
-    src: url(/views/fonts/anurati-regular-webfont.woff2) format('woff2'),
-         url(/views/fonts/anurati-regular-webfont.woff) format('woff');
+    src: url(../fonts/anurati-regular-webfont.woff2) format('woff2'),
+         url(../fonts/anurati-regular-webfont.woff) format('woff');
     font-weight: normal;
     font-style: normal;
 

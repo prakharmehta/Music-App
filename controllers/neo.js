@@ -1,7 +1,7 @@
 const request = require('request')
 
 const neo = (startDate, callback) => {
-    const url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&${startDate}=2015-09-08&api_key=ydKbMkIDwgiPjP2ehOR6OO5z6Be7ZgzaNkGrK8BE`
+    const url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${startDate}&api_key=ydKbMkIDwgiPjP2ehOR6OO5z6Be7ZgzaNkGrK8BE`
 
     request({url, json:true}, (error, { body }) => {
         if (error){

@@ -5,7 +5,7 @@
             <form id="form1" action="">
                 <input id="input1" type="text" class="datepicker" placeholder="Date">
                 <br>
-                <button id="submit">Search</button>
+                <button id="submit1">Search</button>
             </form>
         </div>
         <div class="img-output">
@@ -28,22 +28,22 @@
                 var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
                 return date    
             }
-    document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.datepicker');
-    var instances = M.Datepicker.init(elems, {
-        showClearBtn: true,
-        format: 'yyyy-mm-dd',
-        maxDate: new Date(today()),
-        autoClose: true
+            document.addEventListener('DOMContentLoaded', function() {
+                var elems = document.querySelectorAll('.datepicker');
+                var instances = M.Datepicker.init(elems, {
+                    showClearBtn: true,
+                    format: 'yyyy-mm-dd',
+                    maxDate: new Date(today()),
+                    autoClose: true
         
-    });
-  });
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.materialboxed');
-    var instances = M.Materialbox.init(elems, {
-        inDuration: 275,
-        outDuration: 200
-    });
-  });
+                });
+            });
+            document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.materialboxed');
+            var instances = M.Materialbox.init(elems, {
+                inDuration: 275,
+                outDuration: 200
+            });
+        });
         </script>
          

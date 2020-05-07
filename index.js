@@ -16,12 +16,6 @@ app.get('', (req, res) => {
 })
 
 app.get('/apod', (req, res) => {
-    res.render('apod', {
-        title: 'APOD',
-    })
-})
-
-app.get('/apod/picture', (req, res) => {
     if(!req.query.date)
     {
         var today = new Date();
@@ -60,21 +54,32 @@ app.get('/about', (req, res) => {
 })
 
 app.get('/neo', (req, res) => {
-    if(!req.query.startDate)
-    {
-        return res.send({
-            err: 'You must provide a date!'
+    if(!req.query.start_date)
+    {          
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        today = new Date(date);
+        req.query.start_date = today.toISOString().slice(0,10)
+        neo(req.query.start_date, (err, data) => {
+            if(err) {
+                return res.send(err)
+            }
+            res.send({
+                data
+            })
         })
     }
-
-    neo(req.query.startDate, (err, data) => {
-        if(err) {
-            return res.send(err)
-        }
-        res.send({
-            data
+    else
+    {
+        neo(req.query.start_date, (err, data) => {
+            if(err) {
+                return res.send(err)
+            }
+            res.send({
+                data
+            })
         })
-    })
+    }
 })
 
 app.listen(port, () => {

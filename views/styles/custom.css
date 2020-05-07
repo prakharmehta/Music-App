@@ -3,7 +3,12 @@ li a:hover{
     /* color: white; */
 }
 
-form #submit{
+.sidenav li>a{
+    color: #1a237e;
+    font-weight: bold;
+}
+
+form #submit1, #submit2{
     margin-top: 2.5%;
 	background: linear-gradient(-45deg, #82b1ff, #4527a0, #1a237e, #82b1ff);
 	background-size: 400% 400%;
@@ -69,8 +74,8 @@ body {
     background-color: #1a237e;
 }
 
-.datepicker-table td.is-today {
-    color: #1a237e;
+.datepicker-table td.is-today td.is-selected {
+    color: white;
 }
 
 /* Media Queries */
@@ -174,10 +179,10 @@ body {
         margin-bottom: 25%;
     }
 
-    .apod{
+    .apod, .neo{
         background-color: white;
         color: black;
-        min-height: 25vh;
+        min-height: 55vh;
         display: flex;
         flex-direction: column;
     }
