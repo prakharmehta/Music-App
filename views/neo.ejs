@@ -33,6 +33,15 @@
 </div>
 <p id="msg2">This page shows the Near Earth Objects by Date</p>
 <script>
+  document.addEventListener('DOMContentLoaded', function() {
+                var elems = document.getElementById('input2');
+                var instances = M.Datepicker.init(elems, {
+                    showClearBtn: true,
+                    format: 'yyyy-mm-dd',
+                    autoClose: true
+        
+                });
+            });
     document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.collapsible');
     var instances = M.Collapsible.init(elems, {accordion: true});
