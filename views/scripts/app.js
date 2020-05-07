@@ -10,6 +10,7 @@ const apodLiteral = document.getElementById('apodLiteral')
 if(apodForm)
 {   
     apodForm.addEventListener('submit', (e) => {
+        div.innerHTML=""
         e.preventDefault()
     
         const date = apodSearch.value
@@ -18,6 +19,7 @@ if(apodForm)
         
         fetch(`/apod?date=${date}`).then((response) => {
             response.json().then((data) => {
+
                 if(data.error) {
                     msgOne.textContent = data.error;
                 } else {
@@ -40,32 +42,26 @@ if(apodForm)
                     pic.setAttribute("src", data.data.src);
                     pic.setAttribute("class", "materialboxed");
                     div.appendChild(pic);
-                    apodForm.addEventListener('submit', () => {
-                        div.removeChild(pic);
-                        dateOutput.textContent=''
-                        title.textContent=''
-                        explanation.textContent=''
-                        copyright.textContent=''
-                        apodLiteral.textContent=''
-                    })
                     }                
                 }
             })
         })
     })
 }
+
 const neoForm = document.getElementById('form2')
 const neoSearch = document.getElementById('input2')
 const msgTwo = document.getElementById('msg2')
-const neoDiv = document.getElementsByClassName('neo-info')
+const neoUL = document.getElementById('neo-info')
+
 if(neoForm)
 {   
     neoForm.addEventListener('submit', (e) => {
-        e.preventDefault()
-    
+        e.preventDefault();
+
         const startDate = neoSearch.value        
         
-        // msgOne.textContent = 'Loading...'
+        msgTwo.textContent = 'Loading...'
         
         fetch(`/neo?start_date=${startDate}&end_date=${startDate}`).then((response) => {
             response.json().then((data) => {
@@ -73,19 +69,55 @@ if(neoForm)
                 {
                     msgTwo.textContent = data.error
                 } else {
-                    neoUL = document.createElement("ul");
-                    neoUL.setAttribute("class","collapsible popout");
-                    neoDiv.appendChild(neoUL);
+                    msgTwo.textContent = 'This page shows the Near Earth Objects by Date'
+                    neoUL.innerHTML = ""
+                    data.data.list.forEach(neo => {
                     neoLI = document.createElement("li");
+
                     neoHeader = document.createElement("div");
                     neoHeader.setAttribute("class","collapsible-header");
+
+                    neoIcon = document.createElement("i");
+                    neoIcon.setAttribute("class", "material-icons");
+
+                    neoHeader.appendChild(neoIcon)
+                    neoIcon.appendChild(document.createTextNode("whatshot"));
+
                     neoLIBody = document.createElement("div");
                     neoLIBody.setAttribute("class", "collapsible-body");
-                    data.data.list.forEach(neo => {
+
+                        neoHeader.appendChild(document.createTextNode(`Asteroid Name: ${neo.neoName.replace('(','').replace(')','')}`));
+                        neoLI.appendChild(neoHeader);
+                        neoSpanUL = document.createElement("ul");
+                        neoSpanLI = document.createElement("li");
+                        neoSpanLI.appendChild(document.createTextNode(`Potentially Hazardous: ${neo.hazardous}`))
+                        neoSpanUL.appendChild(neoSpanLI)
+
+                        neoSpanLI = document.createElement("li");
+                        neoSpanLI.appendChild(document.createTextNode(`Diameter: ${Math.round(neo.diameter.estimated_diameter_min)} to ${Math.round(neo.diameter.estimated_diameter_max)} meters (approx.)`))
+                        neoSpanUL.appendChild(neoSpanLI)
+
+                        neoSpanLI = document.createElement("li");
+                        neoSpanLI.appendChild(document.createTextNode(`Date of Closest Approach: ${neo.closeApproachDate}`))
+                        neoSpanUL.appendChild(neoSpanLI)
+
+                        neoSpanLI = document.createElement("li");
+                        neoSpanLI.appendChild(document.createTextNode(`Relative Velocity: ${Math.round(neo.velocity.kilometers_per_hour)} km/h (approx.)`))
+                        neoSpanUL.appendChild(neoSpanLI)
+
+                        neoSpanLI = document.createElement("li");
+                        neoSpanLI.appendChild(document.createTextNode(`NASA - JPL URL: `))
+                        var link = document.createElement("a")
+                        link.setAttribute("src", neo.nasaJplUrl)
+                        link.appendChild(document.createTextNode(`${neo.nasaJplUrl}`))
+                        neoSpanLI.appendChild(link)
+                        neoSpanUL.appendChild(neoSpanLI)
+                        
+                        neoLIBody.appendChild(neoSpanUL);
+                        neoLI.appendChild(neoLIBody);
                         neoUL.appendChild(neoLI);
-
-
                     });
+                    msgTwo.textContent = `Number of Near Earth Objects: ${data.data.count}`
                 }               
             })
         })

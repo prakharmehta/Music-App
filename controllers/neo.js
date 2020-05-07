@@ -9,9 +9,13 @@ const neo = (startDate, callback) => {
         } else {
             asteroids = []
             body.near_earth_objects[startDate].forEach(element => {
-                neo_name = element.name
+                neoName = element.name
                 hazardous = element.is_potentially_hazardous_asteroid
-                asteroids.push({neo_name, hazardous})          
+                nasaJplUrl = element.nasa_jpl_url
+                diameter = element.estimated_diameter.meters
+                closeApproachDate = element.close_approach_data[0].close_approach_date_full
+                velocity = element.close_approach_data[0].relative_velocity
+                asteroids.push({neoName, hazardous, nasaJplUrl, diameter, closeApproachDate, velocity})          
             }) 
 
             info = {

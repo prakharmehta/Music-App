@@ -78,6 +78,10 @@ body {
     color: white;
 }
 
+.collapsible-body{
+    flex-wrap: wrap;
+}
+
 /* Media Queries */
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575px) {
@@ -126,7 +130,7 @@ body {
     }
 
     .page-footer{
-        height: 50vh;
+        /* min-height: 50vh; */
         font-size: x-small;
     }
 }
@@ -191,11 +195,6 @@ body {
         height: 55vh;
     }
 
-    .page-footer{
-        height: 45vh;
-        padding-top: 10%;
-    }
-
  }
 
 /* // Large devices (desktops, 992px and up) */
@@ -215,7 +214,7 @@ body {
         margin-bottom: 25%;
     }
 
-    .apod{
+    .apod, .neo{
         background-color: white;
         color: black;
         min-height: 25vh;
@@ -227,11 +226,6 @@ body {
         height: 55vh;
     }
 
-    .page-footer{
-        min-height: 55vh;
-        padding-top: 10%;
-        font-size: xx-large;
-    }
  }
 
 /* // Extra large devices (large desktops, 1200px and up) */
@@ -320,16 +314,12 @@ body {
         margin-top: 5%;
     }
     
-    .apod{
+    .apod, .neo{
         background-color: white;
         color: black;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-    }
-    
-    .apod input{
-        border: 1px solid black thin;
     }
     
     .img-output{
@@ -382,5 +372,9 @@ body {
     .about{
         height: 100vh;
         background-color: white;
+    }
+
+    #msg2{
+        margin-top: 10%;
     }
  }

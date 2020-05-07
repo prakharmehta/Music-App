@@ -90,7 +90,7 @@ input:focus{
     flex-direction: column;
 }
 
-#msg1{
+#msg1, #msg2{
     text-align: center;
     color: gray;
 }
@@ -98,6 +98,7 @@ input:focus{
 .img-output, .neo-output{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     
 }
 
