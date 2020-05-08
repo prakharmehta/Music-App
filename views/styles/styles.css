@@ -1,6 +1,6 @@
 body {
-    background: url(../images/earth.jpg);
-    background-size: 115% 115%;
+    background: url(../images/earth.svg);
+    background-size: cover;
     background-position: center;
     background-attachment: fixed;
     /* overflow: hidden; */
@@ -29,7 +29,7 @@ body {
     color: white;
     text-align: center;
     flex: 1;
-    margin-top: 30%;
+    margin-top: 25%;
     /* margin-bottom: 30%; */
 }
 
@@ -146,4 +146,8 @@ input:focus{
 .about{
     height: 100vh;
     background-color: white;
+}
+
+footer .footer-copyright a{
+    margin-left: 1rem;
 }
