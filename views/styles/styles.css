@@ -1,5 +1,5 @@
 body {
-    background: url(../images/earth.svg);
+    background: url(/views/images/earth.svg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
