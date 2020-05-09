@@ -25,7 +25,7 @@
             </div>
             <div class="quote">
                 <span class="flow-text">
-                    The stars will never be won by little minds; we must be big as space itself.
+                    <span class="type"></span>
                 </span>
             </div>
         </div>
@@ -68,6 +68,23 @@
     <%- include('partials/footer')%>
     
     <script src="./scripts/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <script>
+        var typed = new Typed('.type', {
+  strings: ["The stars will nev0010100 110000100 110101", "The stars will never be won by little minds\;^1000we must be big as space itself."],
+//   smartBackspace: true,
+  typeSpeed: 60,
+  backSpeed: 50,
+  loop: true // Default value
+});
+// var typed = new Typed('.type', {
+//   strings: ['JavaScript library', 'n ES6 module'],
+// //   smartBackspace: true,
+//   typeSpeed: 50,
+//   backSpeed: 50,
+//   loop: true // Default value
+// });
+      </script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.parallax');
