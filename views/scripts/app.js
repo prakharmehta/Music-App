@@ -34,7 +34,7 @@ if(apodForm)
                         copyright.textContent = `COPYRIGHT: ${data.data.copyright}`;
                     }
                     explanation.textContent = `${data.data.explanation}`;
-                    // msgOne.textContent = ''
+                    msgOne.textContent = 'This page shows the Astronomy Picture of the Day!'
                     apodLiteral.textContent = 'Astronomy Picture of the Day'    
                     div.innerHTML = `<img src = "${data.data.src}">`           
                 }
