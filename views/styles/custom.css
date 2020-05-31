@@ -3,6 +3,10 @@ li a:hover{
     /* color: white; */
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .sidenav li>a{
     color: #1a237e;
     font-weight: bold;
