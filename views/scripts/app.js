@@ -35,14 +35,8 @@ if(apodForm)
                     }
                     explanation.textContent = `${data.data.explanation}`;
                     msgOne.textContent = ''
-                    apodLiteral.textContent = 'Astronomy Picture of the Day'
-                    if(!pic)
-                    {
-                    var pic = document.createElement("img");
-                    pic.setAttribute("src", data.data.src);
-                    pic.setAttribute("class", "materialboxed");
-                    div.appendChild(pic);
-                    }                
+                    apodLiteral.textContent = 'Astronomy Picture of the Day'    
+                    div.innerHTML = `<img src = "${data.data.src}">`           
                 }
             })
         })

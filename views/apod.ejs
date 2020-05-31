@@ -5,17 +5,17 @@
         </div>
         <div class="search">
             <form id="form1" action="">
-                <input id="input1" type="text" class="datepicker" placeholder="Date">
+                <input id="input1" type="text" class="datepicker" autocomplete = "off" placeholder="Date">
                 <br>
                 <button id="submit1">Search</button>
             </form>
         </div>
         <div class="img-output">
-            <div data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-delay="300" data-aos-offset="0" class="img-container" id="img-container-1">
+            <div data-aos="zoom-out" data-aos-easing="ease-in-sine" data-aos-delay="300" data-aos-offset="0" class="img-container" id="img-container-1">
                 <p id="apodLiteral"></p>
             </div>
             
-            <div data-aos="fade-right" data-aos-easing="ease-in-sine"
+            <div data-aos="fade-up" data-aos-easing="ease-in-sine"
             data-aos-delay="300"
             data-aos-offset="0" class="img-info">
                 
@@ -23,7 +23,39 @@
                 <p id="title"></p>
                 <p id="copyright"></p>
                 <p id="explanation"></p>
-            </div> 
+            </div>
+            <script>
+                // const dateOutput = document.getElementById('date')
+                var today = new Date();
+                var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();             
+                
+                
+                // msgOne.textContent = 'Loading...'
+                
+                fetch(`/apod?date=${date}`).then((response) => {
+                    response.json().then((data) => {
+
+                        if(data.error) {
+                            msgOne.textContent = data.error;
+                        } else {
+                            dateOutput.textContent = `DATE: ${data.data.date}`;
+                            title.textContent = `TITLE: ${data.data.title}`;
+                            if(!data.data.copyright)
+                            {
+                                copyright.textContent = `COPYRIGHT: ${data.data.default.copyright}`;
+                            }
+                            else
+                            {
+                                copyright.textContent = `COPYRIGHT: ${data.data.copyright}`;
+                            }
+                            explanation.textContent = `${data.data.explanation}`;
+                            msgOne.textContent = ''
+                            apodLiteral.textContent = 'Astronomy Picture of the Day'    
+                            div.innerHTML = `<img src = "${data.data.src}">`           
+                        }
+                    })
+                })
+    </script>
         </div>
         <p id="msg1">This page shows The Astronomy Picture of the Day</p>
         <script>
@@ -42,13 +74,6 @@
                     autoClose: true
         
                 });
-            });
-            document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.materialboxed');
-            var instances = M.Materialbox.init(elems, {
-                inDuration: 275,
-                outDuration: 200
-            });
         });
         </script>
          
