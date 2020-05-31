@@ -4,10 +4,10 @@
           <a href="#!" class="brand-logo">SPACE</a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#apod">APOD</a></li>
-            <li><a href="#neo">NEO</a></li>
-            <!-- <li><a href="#about">ABOUT</a></li> -->
+            <li class = "sidenav-close"><a href="#home">HOME</a></li>
+            <li class = "sidenav-close"><a href="#apod">APOD</a></li>
+            <li class = "sidenav-close"><a href="#neo">NEO</a></li>
+            <!-- <li class = "sidenav-close"><a href="#about">ABOUT</a></li> -->
           </ul>
       </div>
     </nav>
@@ -15,10 +15,10 @@
     
     
       <ul class="sidenav white" id="mobile-demo">
-        <li><a href="#home">HOME</a></li>
-        <li><a href="#apod">APOD</a></li>
-        <li><a href="#neo">NEO</a></li>
-        <!-- <li><a href="#about">ABOUT</a></li> -->
+        <li class = "sidenav-close"><a href="#home">HOME</a></li>
+        <li class = "sidenav-close"><a href="#apod">APOD</a></li>
+        <li class = "sidenav-close"><a href="#neo">NEO</a></li>
+        <!-- <li class = "sidenav-close"><a href="#about">ABOUT</a></li> -->
       </ul>
 
 
@@ -28,7 +28,7 @@
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems, {
         edge: "left",
-        draggable: true        
+        draggable: true      
     });
     window.onscroll = function() {scrollFunction()};
 
