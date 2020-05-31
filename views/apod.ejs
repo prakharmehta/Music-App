@@ -24,13 +24,14 @@
                 <p id="copyright"></p>
                 <p id="explanation"></p>
             </div>
+            
             <script>
                 // const dateOutput = document.getElementById('date')
                 var today = new Date();
                 var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();             
                 
                 
-                // msgOne.textContent = 'Loading...'
+                // msgOne.textContent = 'Loading...'/
                 
                 fetch(`/apod?date=${date}`).then((response) => {
                     response.json().then((data) => {
@@ -49,16 +50,19 @@
                                 copyright.textContent = `COPYRIGHT: ${data.data.copyright}`;
                             }
                             explanation.textContent = `${data.data.explanation}`;
-                            msgOne.textContent = ''
+                            // msgOne.textContent = ''
                             apodLiteral.textContent = 'Astronomy Picture of the Day'    
                             div.innerHTML = `<img src = "${data.data.src}">`           
                         }
                     })
                 })
-    </script>
+                
+            </script>
+
         </div>
-        <p id="msg1">This page shows The Astronomy Picture of the Day</p>
+
         <script>
+
             function today()
             {
                 var today = new Date();
