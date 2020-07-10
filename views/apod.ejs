@@ -1,83 +1,108 @@
-        <div data-aos="fade-down" data-aos-easing="ease-in-sine"
-        data-aos-delay="300"
-        data-aos-offset="0" class="title-black">
-            <span>APOD</span>
-        </div>
-        <div class="search">
-            <form id="form1" action="">
-                <input id="input1" type="text" class="datepicker" autocomplete = "off" placeholder="Date">
-                <br>
-                <button id="submit1">Search</button>
-            </form>
-        </div>
-        <div class="img-output">
-            <div data-aos="zoom-in" data-aos-easing="ease-in-sine" data-aos-delay="300" data-aos-offset="0" class="img-container" id="img-container-1">
-                <p id="apodLiteral"></p>
-            </div>
-            
-            <div data-aos="fade-up" data-aos-easing="ease-in-sine"
-            data-aos-delay="300"
-            data-aos-offset="0" class="img-info">
-                
-                <p id="date"></p>
-                <p id="title"></p>
-                <p id="copyright"></p>
-                <p id="explanation"></p>
-            </div>
-            
-            <script>
-                // const dateOutput = document.getElementById('date')
-                var today = new Date();
-                var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();             
-                
-                
-                // msgOne.textContent = 'Loading...'/
-                
-                fetch(`/apod?date=${date}`).then((response) => {
-                    response.json().then((data) => {
+<div
+  data-aos="fade-down"
+  data-aos-easing="ease-in-sine"
+  data-aos-delay="300"
+  data-aos-offset="0"
+  class="title-black"
+>
+  <span>APOD</span>
+</div>
+<div class="search">
+  <form id="form1" action="">
+    <input
+      id="input1"
+      type="text"
+      class="datepicker"
+      autocomplete="off"
+      placeholder="Date"
+    />
+    <br />
+    <button id="submit1">Search</button>
+  </form>
+</div>
+<div class="img-output section">
+  <div
+    data-aos="zoom-in"
+    data-aos-easing="ease-in-sine"
+    data-aos-delay="300"
+    data-aos-offset="0"
+    class="img-container"
+    id="img-container-1"
+  >
+    <p id="apodLiteral"></p>
+  </div>
 
-                        if(data.error) {
-                            msgOne.textContent = data.error;
-                        } else {
-                            dateOutput.textContent = `DATE: ${data.data.date}`;
-                            title.textContent = `TITLE: ${data.data.title}`;
-                            if(!data.data.copyright)
-                            {
-                                copyright.textContent = `COPYRIGHT: ${data.data.default.copyright}`;
-                            }
-                            else
-                            {
-                                copyright.textContent = `COPYRIGHT: ${data.data.copyright}`;
-                            }
-                            explanation.textContent = `${data.data.explanation}`;
-                            // msgOne.textContent = ''
-                            apodLiteral.textContent = 'Astronomy Picture of the Day'    
-                            div.innerHTML = `<img src = "${data.data.src}">`           
-                        }
-                    })
-                })
-                
-            </script>
+  <div
+    data-aos="fade-up"
+    data-aos-easing="ease-in-sine"
+    data-aos-delay="300"
+    data-aos-offset="0"
+    class="img-info section flow-text"
+  >
+    <p id="date"></p>
+    <p id="title"></p>
+    <p id="copyright"></p>
+    <p id="explanation"></p>
+  </div>
 
-        </div>
+  <script>
+    // const dateOutput = document.getElementById('date')
+    var today = new Date();
+    var date =
+      today.getFullYear() +
+      "-" +
+      (today.getMonth() + 1) +
+      "-" +
+      today.getDate();
 
-        <script>
+    // msgOne.textContent = 'Loading...'/
 
-            function today()
-            {
-                var today = new Date();
-                var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-                return date    
-            }
-            document.addEventListener('DOMContentLoaded', function() {
-                var elems = document.getElementById('input1');
-                var instances = M.Datepicker.init(elems, {
-                    showClearBtn: true,
-                    format: 'yyyy-mm-dd',
-                    maxDate: new Date(today()),
-                    autoClose: true
-        
-                });
-        });
-        </script>
-         
+    fetch(`/apod?date=${date}`).then((response) => {
+      response.json().then((data) => {
+        if (data.error) {
+          msgOne.textContent = data.error;
+        } else {
+          dateOutput.textContent = `DATE: ${data.data.date}`;
+          title.textContent = `TITLE: ${data.data.title}`;
+          if (!data.data.copyright) {
+            copyright.textContent = `COPYRIGHT: ${data.data.default.copyright}`;
+          } else {
+            copyright.textContent = `COPYRIGHT: ${data.data.copyright}`;
+          }
+          explanation.textContent = `${data.data.explanation}`;
+          // msgOne.textContent = ''
+          apodLiteral.textContent = "Astronomy Picture of the Day";
+          if (data.data.media === "image") {
+            div.className = "img-container";
+            div.innerHTML = `<img src = "${data.data.src}">`;
+          } else {
+            div.className = "video-container";
+            div.innerHTML = `<iframe width="560" height="315" src="${data.data.src}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+          }
+        }
+      });
+    });
+  </script>
+</div>
+
+<script>
+  function today() {
+    var today = new Date();
+    var date =
+      today.getFullYear() +
+      "-" +
+      (today.getMonth() + 1) +
+      "-" +
+      today.getDate();
+    return date;
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    var elems = document.getElementById("input1");
+    var instances = M.Datepicker.init(elems, {
+      showClearBtn: true,
+      format: "yyyy-mm-dd",
+      maxDate: new Date(today()),
+      autoClose: true,
+    });
+  });
+</script>

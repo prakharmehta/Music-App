@@ -9,8 +9,9 @@ const apod = (date, callback) => {
             callback('Invalid Date', undefined)
         } else {
             info = {
+                media: body.media_type,
                 copyright: body.copyright,
-                "default": {"copyright": "A Space Geek"},
+                "default": {"copyright": "Unknown"},
                 date: body.date,
                 explanation: body.explanation,
                 src: body.url,
